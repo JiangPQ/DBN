@@ -9,11 +9,11 @@
 class BaseTensor {
 private:
     long int n_dimension;
-    long int* dimensions;
+    long int * dimensions;
 public:
-    BaseTensor(long int n_dimension, long int* dimensions);
+    BaseTensor(long int n_dimension, long int * dimensions);
     long int get_ndimension();
-    long int* get_dimensions();
+    long int * get_dimensions();
 
 };
 

@@ -8,9 +8,9 @@
 
 class FloatTensor:public BaseTensor {
 private:
-    float* storage;
+    float * storage;
 public:
-    FloatTensor(long int n_dimension, long int* dimensions);
+    FloatTensor(long int n_dimension, long int * dimensions);
 };
 
 
