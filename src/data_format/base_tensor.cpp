@@ -2,4 +2,4 @@
 // Created by jiangpq on 17-10-6.
 //
 
-#include "tensor.h"
+#include "base_tensor.h"

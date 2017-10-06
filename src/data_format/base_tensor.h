@@ -6,7 +6,7 @@
 #define DBN_TENSOR_H
 
 
-class tensor {
+class base_tensor {
 
 };
 
