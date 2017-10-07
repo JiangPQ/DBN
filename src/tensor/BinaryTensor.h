@@ -10,9 +10,10 @@ class BinaryTensor: public BaseTensor {
 
 private:
     long int last_dim_len;
-    short * storage;
+    unsigned short * storage;
 public:
     BinaryTensor(long int n_dimension, long int * dimensions);
+    ~BinaryTensor();
     long int get_actual_last_dim_len();
 };
 
