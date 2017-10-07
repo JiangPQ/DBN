@@ -12,3 +12,7 @@ FloatTensor::FloatTensor(long int n_dimension, long int * dimensions):
     }
     this->storage = new float(length);
 }
+
+FloatTensor::~FloatTensor() {
+    delete this->storage;
+}
