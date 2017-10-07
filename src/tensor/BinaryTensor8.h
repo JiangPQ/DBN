@@ -7,15 +7,13 @@
 
 
 #include "BaseTensor.h"
+#include "BinaryTensor.h"
 
-class BinaryTensor8: public BaseTensor {
+class BinaryTensor8: public BinaryTensor {
 private:
-    long int last_dim_len;
     unsigned char * storage;
     BinaryTensor8(long int n_dimension, long int * dimensions);
     ~BinaryTensor8();
-public:
-    long int get_actual_last_dim_len();
 };
 
 
