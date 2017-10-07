@@ -7,6 +7,9 @@
 BinaryTensor::BinaryTensor(long n_dimension, long *dimensions) :
         BaseTensor(n_dimension, dimensions) {
 
+    this->last_dim_len = int(dimensions[n_dimension - 1] / 8);
+    if(dimensions[n_dimension - 1] % 8)
+        this->last_dim_len += 1;
 }
 
 long int BinaryTensor::get_actual_last_dim_len() {
