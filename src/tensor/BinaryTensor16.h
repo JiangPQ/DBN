@@ -11,9 +11,9 @@ class BinaryTensor16: public BaseTensor {
 private:
     long int last_dim_len;
     unsigned short * storage;
-public:
     BinaryTensor16(long int n_dimension, long int * dimensions);
     ~BinaryTensor16();
+public:
     long int get_actual_last_dim_len();
 };
 
