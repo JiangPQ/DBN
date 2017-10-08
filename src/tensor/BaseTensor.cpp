@@ -4,9 +4,16 @@
 
 #include "BaseTensor.h"
 
-BaseTensor::BaseTensor(long int n_dimension, long int* dimensions) {
+BaseTensor::BaseTensor(long n_dimension, const long * dimensions) {
     this->n_dimension = n_dimension;
-    this->dimensions = dimensions;
+    this->dimensions = new long(n_dimension);
+    for(long i = 0; i < n_dimension; i++) {
+        this->dimensions[i] = dimensions[i];
+    }
+}
+
+BaseTensor::~BaseTensor() {
+    delete this->dimensions;
 }
 
 long int BaseTensor::get_ndimension() {
