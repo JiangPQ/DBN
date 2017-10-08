@@ -11,7 +11,7 @@ private:
     float * storage;
 public:
     FloatTensor(long int n_dimension, long int * dimensions);
-    ~FloatTensor();
+    ~FloatTensor() final;
 };
 
 

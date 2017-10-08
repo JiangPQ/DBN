@@ -10,11 +10,12 @@
 #include "BinaryTensor.h"
 
 class BinaryTensor8: public BinaryTensor {
+    friend class BinarizationOp8;
 private:
     unsigned char * storage;
 public:
     BinaryTensor8(long n_dimension, const long * dimensions);
-    ~BinaryTensor8();
+    ~BinaryTensor8() final ;
 };
 
 

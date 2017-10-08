@@ -14,7 +14,7 @@ private:
     unsigned short * storage;
 public:
     BinaryTensor16(long n_dimension, const long * dimensions);
-    ~BinaryTensor16();
+    ~BinaryTensor16() final;
 };
 
 

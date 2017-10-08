@@ -4,6 +4,6 @@
 
 #include "BaseOperation.h"
 
-BaseOperation::BaseOperation() {
+BaseOperation::BaseOperation() = default;
 
-}
+BaseOperation::~BaseOperation() = default;
