@@ -4,7 +4,7 @@
 
 #include "BinaryTensor.h"
 
-BinaryTensor::BinaryTensor(long n_dimension, long *dimensions) :
+BinaryTensor::BinaryTensor(long n_dimension, const long * dimensions) :
         BaseTensor(n_dimension, dimensions) {
 
     this->last_dim_len = int(dimensions[n_dimension - 1] / 8);

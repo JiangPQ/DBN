@@ -4,13 +4,13 @@
 
 #include "BinaryTensor8.h"
 
-BinaryTensor8::BinaryTensor8(long int n_dimension, long int *dimensions):
-        BinaryTensor(n_dimension, dimensions) {
+BinaryTensor8::BinaryTensor8(long n_dimension, const long * dimensions): BinaryTensor(n_dimension, dimensions) {
 
     long int length = 1;
-    for(int i = 0; i < n_dimension; i++){
+    for(int i = 0; i < n_dimension - 1; i++){
         length *= dimensions[i];
     }
+    length *= this->get_actual_last_dim_len();
     this->storage = new unsigned char(length);
 }
 

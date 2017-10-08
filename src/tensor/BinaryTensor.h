@@ -12,7 +12,7 @@ class BinaryTensor: public BaseTensor {
 private:
     long int last_dim_len;
 public:
-    BinaryTensor(long n_dimension, long *dimensions);
+    BinaryTensor(long n_dimension, const long * dimensions);
     long int get_actual_last_dim_len();
 
 };
