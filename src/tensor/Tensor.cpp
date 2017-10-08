@@ -16,10 +16,18 @@ Tensor::~Tensor() {
     delete this->dimensions;
 }
 
-long int Tensor::get_ndimension() {
+long Tensor::get_ndimension() {
     return this->n_dimension;
 }
 
-long int *Tensor::get_dimensions() {
+long *Tensor::get_dimensions() {
     return this->dimensions;
+}
+
+long Tensor::get_length() {
+    long length = 1;
+    for (long i = 0; i < n_dimension; ++i) {
+        length *= dimensions[i];
+    }
+    return length;
 }

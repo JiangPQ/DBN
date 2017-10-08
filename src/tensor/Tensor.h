@@ -14,8 +14,9 @@ private:
 public:
     Tensor(long n_dimension, const long *dimensions);
     virtual ~Tensor() = 0;
-    long int get_ndimension();
-    long int * get_dimensions();
+    long get_ndimension();
+    long * get_dimensions();
+    long get_length();
 
 };
 
