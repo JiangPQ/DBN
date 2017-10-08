@@ -3,3 +3,7 @@
 //
 
 #include "BaseOperation.h"
+
+BaseOperation::BaseOperation() {
+
+}
