@@ -6,9 +6,9 @@
 #define DBN_BINARYTENSOR_H
 
 
-#include "BaseTensor.h"
+#include "Tensor.h"
 
-class BinaryTensor: public BaseTensor {
+class BinaryTensor: public Tensor {
 private:
     long int last_dim_len;
 public:

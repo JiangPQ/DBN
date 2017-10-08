@@ -1,7 +1,7 @@
 //
 // Created by AMOBBS on 2017/10/6.
 //
-#include "BaseTensor.h"
+#include "Tensor.h"
 #include "BinaryTensor.h"
 
 #ifndef DBN_BINARYTENSOR16_H

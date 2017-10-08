@@ -1,12 +1,12 @@
 //
 // Created by jiangpq on 17-10-6.
 //
-#include "BaseTensor.h"
+#include "Tensor.h"
 #ifndef DBN_FLOAT_TENSOR_H
 #define DBN_FLOAT_TENSOR_H
 
 
-class FloatTensor:public BaseTensor {
+class FloatTensor:public Tensor {
 private:
     float * storage;
 public:

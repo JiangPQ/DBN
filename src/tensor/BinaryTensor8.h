@@ -6,7 +6,7 @@
 #define DBN_BINARYTENSOR8_H
 
 
-#include "BaseTensor.h"
+#include "Tensor.h"
 #include "BinaryTensor.h"
 
 class BinaryTensor8: public BinaryTensor {
