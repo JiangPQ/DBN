@@ -10,6 +10,7 @@ class BaseOperation {
 private:
 public:
     BaseOperation();
+    virtual ~BaseOperation() = 0;
 };
 
 
