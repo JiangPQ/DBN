@@ -13,7 +13,7 @@ private:
     long int * dimensions;
 public:
     BaseTensor(long n_dimension, const long *dimensions);
-    virtual ~BaseTensor();
+    virtual ~BaseTensor() = 0;
     long int get_ndimension();
     long int * get_dimensions();
 

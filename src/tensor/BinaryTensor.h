@@ -13,6 +13,7 @@ private:
     long int last_dim_len;
 public:
     BinaryTensor(long n_dimension, const long * dimensions);
+    virtual ~BinaryTensor() = 0;
     long int get_actual_last_dim_len();
 
 };
