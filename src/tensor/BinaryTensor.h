@@ -10,11 +10,15 @@
 
 class BinaryTensor: public Tensor {
 private:
-    long int last_dim_len;
+    long last_dim_len;
+    long last_dim_num;
 public:
     BinaryTensor(long n_dimension, const long * dimensions);
     virtual ~BinaryTensor() = 0;
-    long int get_actual_last_dim_len();
+
+    long get_actual_last_dim_len();
+
+    long get_how_many_last_dim();
 
 };
 
