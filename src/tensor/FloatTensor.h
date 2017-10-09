@@ -8,6 +8,8 @@
 
 class FloatTensor:public Tensor {
     friend class BinarizationOp8;
+
+    friend class FloatenOp;
 private:
     float * storage;
 public:

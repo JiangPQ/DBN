@@ -11,6 +11,8 @@
 
 class BinaryTensor8: public BinaryTensor {
     friend class BinarizationOp8;
+
+    friend class FloatenOp;
 private:
     unsigned char * storage;
 public:
