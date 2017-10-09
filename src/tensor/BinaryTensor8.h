@@ -17,7 +17,7 @@ class BinaryTensor8: public BinaryTensor {
 private:
     unsigned char * storage;
 public:
-    BinaryTensor8(long n_dimension, const long * dimensions);
+    BinaryTensor8(long n_dimension, const long *dimensions, bool is_weight = false);
     ~BinaryTensor8() final ;
 };
 

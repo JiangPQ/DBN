@@ -13,7 +13,7 @@ class BinaryTensor16: public BinaryTensor {
 private:
     unsigned short * storage;
 public:
-    BinaryTensor16(long n_dimension, const long * dimensions);
+    BinaryTensor16(long n_dimension, const long *dimensions, bool is_weight = false);
     ~BinaryTensor16() final;
 };
 
