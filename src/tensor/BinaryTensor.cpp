@@ -4,9 +4,9 @@
 
 #include "BinaryTensor.h"
 
-BinaryTensor::BinaryTensor(long n_dimension, const long * dimensions) :
+BinaryTensor::BinaryTensor(long n_dimension, const long *dimensions, bool is_weight = false) :
         Tensor(n_dimension, dimensions) {
-
+    this->is_weight = is_weight;
     this->last_dim_len = dimensions[n_dimension - 1] / 8;
     if(dimensions[n_dimension - 1] % 8)
         this->last_dim_len += 1;
@@ -22,4 +22,8 @@ long BinaryTensor::get_actual_last_dim_len() {
 
 long BinaryTensor::get_how_many_last_dim() {
     return this->last_dim_num;
+}
+
+bool BinaryTensor::get_is_weight() {
+    return this->is_weight;
 }
