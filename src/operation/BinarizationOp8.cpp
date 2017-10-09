@@ -5,7 +5,7 @@
 #include "BinarizationOp8.h"
 
 /**
- * Binarize the input FloatTensor to a BinaryTensor8.
+ * Binarize the input FloatTensor to a BinaryTensor8, bit 1 for bigger than 0 and bit 0 for the opposite.
  * @param input
  * @return
  */
