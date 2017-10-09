@@ -20,7 +20,7 @@ BinaryTensor8 *BinConv2d::forward(BinaryTensor8 *input, BinaryTensor8 *weight) {
     dimensions[3] = W - k_size1 + 1;
 
     auto *output = new BinaryTensor8(n_dimension, dimensions);
-
+    auto *output = new BinaryTensor8(n_dimension, dimensions);
 
     return output;
 }
