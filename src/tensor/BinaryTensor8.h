@@ -7,11 +7,12 @@
 
 
 #include "Tensor.h"
-#include "BinaryTensor.h"
 
 class BinaryTensor8 : public Tensor {
     friend class BinarizationOp8;
     friend class FloatenOp;
+
+    friend BinaryTensor8 *flattenWindow(BinaryTensor8 *input);
 
     friend class BinConv2d;
 private:
