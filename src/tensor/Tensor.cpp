@@ -6,7 +6,7 @@
 
 Tensor::Tensor(long n_dimension, const long * dimensions) {
     this->n_dimension = n_dimension;
-    this->dimensions = new long(n_dimension);
+    this->dimensions = new long[n_dimension];
     for(long i = 0; i < n_dimension; i++) {
         this->dimensions[i] = dimensions[i];
     }

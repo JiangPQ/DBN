@@ -10,7 +10,7 @@ FloatTensor::FloatTensor(long int n_dimension, long int * dimensions):
     for(int i = 0; i < n_dimension; i++){
         length *= dimensions[i];
     }
-    this->storage = new float(length);
+    this->storage = new float[length];
 }
 
 FloatTensor::~FloatTensor() {
