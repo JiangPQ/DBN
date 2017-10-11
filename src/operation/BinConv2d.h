@@ -8,13 +8,12 @@
 
 #include "BaseOperation.h"
 #include "../tensor/BinaryTensor8.h"
-#include "../tensor/BinaryTensor16.h"
+
+static unsigned char POPCNT[] = {};
 
 class BinConv2d : public BaseOperation {
 public:
     BinaryTensor8 *forward(BinaryTensor8 *input, BinaryTensor8 *weight);
-
-    BinaryTensor16 *forward(BinaryTensor16 *input, BinaryTensor16 *weight);
 };
 
 
