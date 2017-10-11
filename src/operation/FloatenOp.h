@@ -8,13 +8,10 @@
 
 #include "../tensor/FloatTensor.h"
 #include "../tensor/BinaryTensor8.h"
-#include "../tensor/BinaryTensor16.h"
 
 class FloatenOp {
 public:
     FloatTensor *forward(BinaryTensor8 *input);
-
-    FloatTensor *forward(BinaryTensor16 *input);
 };
 
 

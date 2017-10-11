@@ -37,7 +37,3 @@ FloatTensor *FloatenOp::forward(BinaryTensor8 *input) {
     }
     return output;
 }
-
-FloatTensor *FloatenOp::forward(BinaryTensor16 *input) {
-    return nullptr;
-}

@@ -9,16 +9,27 @@ BinaryTensor8::BinaryTensor8(long n_dimension, const long *dimensions, bool is_w
 
     this->is_weight = is_weight;
 
-    // compute how many last dimensions are there
-    this->last_dim_num = 1;
-    for (long i = 0; i < n_dimension - 1; ++i) {
-        this->last_dim_num *= dimensions[i];
-    }
+    if (is_weight) {
 
-    // compute the length the last dimension
-    long rem = dimensions[n_dimension - 1] % 8;
-    // if this tensor is a 3 by 3 weight, then cut it to length 8
-    this->last_dim_len = dimensions[n_dimension - 1] / 8 + (!this->is_weight && rem >= 4) ? 1 : 0;
+        // compute how many last dimensions are there
+        this->last_dim_num = 1;
+        for (long dim = 0; dim < n_dimension - 3; ++dim) {
+            this->last_dim_num *= dimensions[dim];
+        }
+        if (dimensions[n_dimension - 1] == 3 && dimensions[n_dimension - 2] == 3)
+            this->last_dim_len = dimensions[n_dimension - 3];
+    } else {
+
+        // compute how many last dimensions are there
+        this->last_dim_num = 1;
+        for (long dim = 0; dim < n_dimension - 1; ++dim) {
+            this->last_dim_num *= dimensions[dim];
+        }
+
+        // compute the length the last dimension
+        long rem = dimensions[n_dimension - 1] % 8;
+        this->last_dim_len = dimensions[n_dimension - 1] / 8 + (rem != 0) ? 1 : 0;
+    }
 
     this->storage = new unsigned char[this->last_dim_num * this->last_dim_len];
 }
