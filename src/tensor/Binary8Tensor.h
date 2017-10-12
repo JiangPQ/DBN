@@ -20,6 +20,7 @@ private:
     long last_dim_num;
     bool is_weight;
     unsigned char *storage;
+
 public:
     Binary8Tensor(long Nd, const long dimensions[], bool is_weight = false);
 
@@ -30,6 +31,8 @@ public:
     long get_how_many_last_dim();
 
     bool get_is_weight();
+
+    unsigned char *get_storage();
 };
 
 

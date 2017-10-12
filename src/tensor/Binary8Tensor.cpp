@@ -4,7 +4,7 @@
 
 #include "Binary8Tensor.h"
 
-Binary8Tensor::Binary8Tensor(long Nd, const long dimensions[], bool is_weight) : Tensor(
+Binary8Tensor::Binary8Tensor(long Nd, const long *dimensions, bool is_weight) : Tensor(
         4, dimensions) {
     this->is_weight = is_weight;
 
@@ -49,4 +49,8 @@ long Binary8Tensor::get_how_many_last_dim() {
 
 bool Binary8Tensor::get_is_weight() {
     return this->is_weight;
+}
+
+unsigned char *Binary8Tensor::get_storage() {
+    return this->storage;
 }
