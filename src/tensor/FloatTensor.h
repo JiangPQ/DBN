@@ -6,10 +6,10 @@
 #define DBN_FLOAT_TENSOR_H
 
 
-class FloatTensor:public Tensor {
-    friend class BinarizationOp8;
+struct FloatTensor : public Tensor {
+    friend class Float2BinaryOp;
 
-    friend class FloatenOp;
+    friend class Binary2FloatOp;
 private:
     float * storage;
 public:

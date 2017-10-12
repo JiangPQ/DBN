@@ -11,7 +11,7 @@
  * @param weight
  * @return
  */
-BinaryTensor8 *BinConv2d::forward(BinaryTensor8 *input, BinaryTensor8 *weight) {
+Binary8Tensor *BinConv2d::forward(Binary8Tensor *input, Binary8Tensor *weight, Binary8Tensor *output) {
 
     auto N = input->get_dimensions()[0];
     auto Cin = input->get_dimensions()[1];
@@ -25,12 +25,6 @@ BinaryTensor8 *BinConv2d::forward(BinaryTensor8 *input, BinaryTensor8 *weight) {
 
     auto n_dimension = input->get_ndimension();
 
-    auto *dimensions = new long[4];
-    dimensions[0] = N;
-    dimensions[1] = Cout;
-    dimensions[2] = H - k_size0 + 1;
-    dimensions[3] = W - k_size1 + 1;
-    auto *output = new BinaryTensor8(n_dimension, dimensions);
     auto output_last_dim_len = output->get_actual_last_dim_len();
 
     long row_max = H - k_size0 + 1;
@@ -54,7 +48,7 @@ BinaryTensor8 *BinConv2d::forward(BinaryTensor8 *input, BinaryTensor8 *weight) {
 
                         // if in the same byte
                         if (col / 8 == (col + 2) / 8) {
-                            auto rem = unsigned char(col % 8);
+                            auto rem = (unsigned char) (col % 8);
                             temp |= (input->storage[input_idx] & (0x07 << rem)) >> rem;
                             temp |= rem > 3 ?
                                     (input->storage[input_idx + input_last_dim_len] & (0x07 << rem)) << (3 - rem) :
@@ -85,7 +79,7 @@ BinaryTensor8 *BinConv2d::forward(BinaryTensor8 *input, BinaryTensor8 *weight) {
                         }
 
                         // apply popcnt to the result of binary convolution
-                        if (POPCNT[~(temp ^ weight->storage[weight_base_idx + ch_in])] >= 4) {
+                        if (POPCNT8[~(temp ^ weight->storage[weight_base_idx + ch_in])] >= 4) {
                             output->storage[output_idx] |= 0x1 << (col % 8);
                         } else {
                             output->storage[output_idx] &= 0xfe << (col % 8);

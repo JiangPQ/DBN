@@ -8,11 +8,11 @@
 
 #include "BaseOperation.h"
 #include "../tensor/FloatTensor.h"
-#include "../tensor/BinaryTensor8.h"
+#include "../tensor/Binary8Tensor.h"
 
-class BinarizationOp8: public BaseOperation {
+class Float2BinaryOp : public BaseOperation {
 public:
-    BinaryTensor8 * forward(FloatTensor * input);
+    Binary8Tensor *forward(FloatTensor *input);
 };
 
 

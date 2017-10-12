@@ -7,11 +7,12 @@
 
 
 #include "../tensor/FloatTensor.h"
-#include "../tensor/BinaryTensor8.h"
+#include "../tensor/Binary8Tensor.h"
+#include "BaseOperation.h"
 
-class FloatenOp {
+class Binary2FloatOp : public BaseOperation {
 public:
-    FloatTensor *forward(BinaryTensor8 *input);
+    FloatTensor *forward(Binary8Tensor *input);
 };
 
 

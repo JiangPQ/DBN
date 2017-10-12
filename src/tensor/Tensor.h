@@ -6,7 +6,7 @@
 #define DBN_BASE_TENSOR_H
 
 
-class Tensor {
+struct Tensor {
 private:
 
     long int n_dimension;

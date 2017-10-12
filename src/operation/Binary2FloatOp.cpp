@@ -2,14 +2,14 @@
 // Created by jiangpq on 17-10-9.
 //
 
-#include "FloatenOp.h"
+#include "Binary2FloatOp.h"
 
 /**
  * Convert a BinaryTensor to a FloatTensor, 1.0 for bit 1, -1.0 for bit 0.
  * @param input
  * @return
  */
-FloatTensor *FloatenOp::forward(BinaryTensor8 *input) {
+FloatTensor *Binary2FloatOp::forward(Binary8Tensor *input) {
     auto *output = new FloatTensor(input->get_ndimension(), input->get_dimensions());
 
     long output_last_dim_len = output->get_dimensions()[input->get_ndimension() - 1];

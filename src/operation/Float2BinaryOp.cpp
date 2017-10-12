@@ -2,16 +2,16 @@
 // Created by jiangpq on 17-10-7.
 //
 
-#include "BinarizationOp8.h"
+#include "Float2BinaryOp.h"
 
 /**
  * Binarize the input FloatTensor to a BinaryTensor8, bit 1 for bigger than 0 and bit 0 for the opposite.
  * @param input
  * @return
  */
-BinaryTensor8 * BinarizationOp8::forward(FloatTensor * input) {
+Binary8Tensor *Float2BinaryOp::forward(FloatTensor *input) {
 
-    auto *output = new BinaryTensor8(input->get_ndimension(), input->get_dimensions()); // new output tensor
+    auto *output = new Binary8Tensor(input->get_ndimension(), input->get_dimensions()); // new output tensor
 
     long input_last_dim_len = input->get_dimensions()[input->get_ndimension() - 1];
     long output_last_dim_num = output->get_how_many_last_dim();
