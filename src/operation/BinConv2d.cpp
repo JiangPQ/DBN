@@ -11,7 +11,7 @@
  * @param weight
  * @return
  */
-Binary8Tensor *BinConv2d::forward(Binary8Tensor *input, Binary8Tensor *weight, Binary8Tensor *output) {
+int BinConv2d::forward(Binary8Tensor *input, Binary8Tensor *weight, Binary8Tensor *output) {
 
     auto N = input->get_dimensions()[0];
     auto Cin = input->get_dimensions()[1];
@@ -95,5 +95,5 @@ Binary8Tensor *BinConv2d::forward(Binary8Tensor *input, Binary8Tensor *weight, B
             }
         }
     }
-    return output;
+    return 0;
 }

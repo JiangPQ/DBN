@@ -30,7 +30,7 @@ static unsigned char POPCNT8[256] = {
 
 class BinConv2d : public BaseOperation {
 public:
-    static Binary8Tensor *forward(Binary8Tensor *input, Binary8Tensor *weight, Binary8Tensor *output);
+    int forward(Binary8Tensor *input, Binary8Tensor *weight, Binary8Tensor *output);
 };
 
 
